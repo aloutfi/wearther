@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.1" />
+<title>wearther API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>wearther</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="wearther.addClothingArticle"><code class="name flex">
+<span>def <span class="ident">addClothingArticle</span></span>(<span>ClothingArticle)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>return</code> Successful article creation or 401.</p></div>
+</dd>
+<dt id="wearther.chooseWeatherService"><code class="name flex">
+<span>def <span class="ident">chooseWeatherService</span></span>(<span>UserLocation: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Chooses a weather service to get weather data from.
+<code>param</code> UserLocation: list containing latitude longitude coordinate pair describing user's location</p>
+<p><code>return</code> Weather Service API Parser</p></div>
+</dd>
+<dt id="wearther.findArticleByStatus"><code class="name flex">
+<span>def <span class="ident">findArticleByStatus</span></span>(<span>status: str, articleId: str, CSRF: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find clothing article by status of either available or unavailable.</p>
+<p><code>param</code> status:</p>
+<p><code>param</code> articleId: ID of clothing article in wearther</p>
+<p><code>return</code> Boolean representing the availability of the given clothing article.</p></div>
+</dd>
+<dt id="wearther.findArticlesByTags"><code class="name flex">
+<span>def <span class="ident">findArticlesByTags</span></span>(<span>tag: str, CSRF: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find clothing articles by type</p>
+<p><code>param</code> tag: type of clothing article</p>
+<p><code>param</code> CSRF: token of the currently logged in user</p>
+<p><code>return</code></p></div>
+</dd>
+<dt id="wearther.getArticleById"><code class="name flex">
+<span>def <span class="ident">getArticleById</span></span>(<span>articleId: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>param</code> articleId: ID of clothing article in wearther</p>
+<p><code>return</code> Corresponding clothing article or 404.</p></div>
+</dd>
+<dt id="wearther.getArticlefromClosetById"><code class="name flex">
+<span>def <span class="ident">getArticlefromClosetById</span></span>(<span>articleId: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find a clothing article in wearther by its ID.</p>
+<p><code>param</code> articleId: ID of clothing article in wearther</p>
+<p><code>return</code> Corresponding clothing article in closet or 404.</p></div>
+</dd>
+<dt id="wearther.getClothingRecomendation"><code class="name flex">
+<span>def <span class="ident">getClothingRecomendation</span></span>(<span>UserId: str, CSRF: str, location: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieve clothing based on forecast of current location and user preferences</p>
+<p><code>param</code> UserId: The ID of the current User</p>
+<p><code>param</code> CSRF: token of currently logged in user</p>
+<p><code>param</code> location: location of user expressed as zip code or coordinate pair.</p>
+<p><code>return</code> outfit recommendation</p></div>
+</dd>
+<dt id="wearther.getLocationFromZipCode"><code class="name flex">
+<span>def <span class="ident">getLocationFromZipCode</span></span>(<span>zipcode: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param zipcode: the 5 digit zip code
+:return: list containing latitude longitude coordinate pair.</p></div>
+</dd>
+<dt id="wearther.getUserByName"><code class="name flex">
+<span>def <span class="ident">getUserByName</span></span>(<span>UserId: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrieve User by username.</p>
+<p><code>param</code> UserId: ID of user in wearther</p>
+<p><code>return</code> public facing data corresponding with UserId or 404.</p></div>
+</dd>
+<dt id="wearther.getWeather"><code class="name flex">
+<span>def <span class="ident">getWeather</span></span>(<span>Location: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the weather data from a weather service.
+<code>param</code> Location: list containing latitude longitude coordinate pair describing location forecast is retrieved for</p>
+<p><code>return</code> Weather Object</p></div>
+</dd>
+<dt id="wearther.isAvailable"><code class="name flex">
+<span>def <span class="ident">isAvailable</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Determine if this weather service API is usable.</p>
+<p><code>return</code> Boolean representing the availability of this Weather Service API Parser.</p></div>
+</dd>
+<dt id="wearther.requestWeather"><code class="name flex">
+<span>def <span class="ident">requestWeather</span></span>(<span>WSAPIParser, UserLocation: list)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Asks a Weather Service API Parser for a Weather object compiled by that weather service.
+<code>param</code> WSAPIParser:</p>
+<p><code>param</code> UserLocation: list containing latitude longitude coordinate pair describing user's location</p>
+<p><code>return</code> Request to Weather Service API parser</p></div>
+</dd>
+<dt id="wearther.uploadImage"><code class="name flex">
+<span>def <span class="ident">uploadImage</span></span>(<span>Image: bytearray, CSRF: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Upload an image of an article of clothing.</p>
+<p><code>param</code> Image: bytearray representing image</p>
+<p><code>param</code> CSRF: token of currently logged in user</p>
+<p><code>return</code> Confirmation of successful image upload or 401.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="wearther.Closet"><code class="flex name class">
+<span>class <span class="ident">Closet</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Closet object</p></div>
+</dd>
+<dt id="wearther.ClothingArticle"><code class="flex name class">
+<span>class <span class="ident">ClothingArticle</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clothing article object</p></div>
+</dd>
+<dt id="wearther.User"><code class="flex name class">
+<span>class <span class="ident">User</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>User Object</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="wearther.User.createAccount"><code class="name flex">
+<span>def <span class="ident">createAccount</span></span>(<span>self, username: str, password: str, BMI: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Wearther User</p>
+<p><code>param</code> username: desired username</p>
+<p><code>param</code> password: desired password</p>
+<p><code>param</code> BMI: Height/Weight from frontend</p>
+<p><code>return</code> confirmation of successful account creation</p></div>
+</dd>
+<dt id="wearther.User.loginUser"><code class="name flex">
+<span>def <span class="ident">loginUser</span></span>(<span>self, username: str, password: <built-in function hash>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Log user into weather and create a corresponding session.</p>
+<p><code>param</code> username: the username of the existing user</p>
+<p><code>param</code> password: the hashed password of the user.</p>
+<p><code>return</code> Authorized CSRF token</p></div>
+</dd>
+<dt id="wearther.User.logoutUser"><code class="name flex">
+<span>def <span class="ident">logoutUser</span></span>(<span>self, CSRF: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Log out current user from logged in session.</p>
+<p><code>param</code> CSRF: token of the currently logged in user</p>
+<p><code>return</code> Succesful deauthorization of CSRF token on server.</p></div>
+</dd>
+<dt id="wearther.User.updatePreferences"><code class="name flex">
+<span>def <span class="ident">updatePreferences</span></span>(<span>self, CSRF: str, preference: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update Weather User Preferences
+<code>param</code> CSRF: token of the currently logged in user</p>
+<p><code>param</code> preference: key value pair where key is the attribute to be updated and value is the value it should be updated to.</p>
+<p><code>return</code> confirmation of successful updating of user preferences.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="wearther.addClothingArticle" href="#wearther.addClothingArticle">addClothingArticle</a></code></li>
+<li><code><a title="wearther.chooseWeatherService" href="#wearther.chooseWeatherService">chooseWeatherService</a></code></li>
+<li><code><a title="wearther.findArticleByStatus" href="#wearther.findArticleByStatus">findArticleByStatus</a></code></li>
+<li><code><a title="wearther.findArticlesByTags" href="#wearther.findArticlesByTags">findArticlesByTags</a></code></li>
+<li><code><a title="wearther.getArticleById" href="#wearther.getArticleById">getArticleById</a></code></li>
+<li><code><a title="wearther.getArticlefromClosetById" href="#wearther.getArticlefromClosetById">getArticlefromClosetById</a></code></li>
+<li><code><a title="wearther.getClothingRecomendation" href="#wearther.getClothingRecomendation">getClothingRecomendation</a></code></li>
+<li><code><a title="wearther.getLocationFromZipCode" href="#wearther.getLocationFromZipCode">getLocationFromZipCode</a></code></li>
+<li><code><a title="wearther.getUserByName" href="#wearther.getUserByName">getUserByName</a></code></li>
+<li><code><a title="wearther.getWeather" href="#wearther.getWeather">getWeather</a></code></li>
+<li><code><a title="wearther.isAvailable" href="#wearther.isAvailable">isAvailable</a></code></li>
+<li><code><a title="wearther.requestWeather" href="#wearther.requestWeather">requestWeather</a></code></li>
+<li><code><a title="wearther.uploadImage" href="#wearther.uploadImage">uploadImage</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="wearther.Closet" href="#wearther.Closet">Closet</a></code></h4>
+</li>
+<li>
+<h4><code><a title="wearther.ClothingArticle" href="#wearther.ClothingArticle">ClothingArticle</a></code></h4>
+</li>
+<li>
+<h4><code><a title="wearther.User" href="#wearther.User">User</a></code></h4>
+<ul class="">
+<li><code><a title="wearther.User.createAccount" href="#wearther.User.createAccount">createAccount</a></code></li>
+<li><code><a title="wearther.User.loginUser" href="#wearther.User.loginUser">loginUser</a></code></li>
+<li><code><a title="wearther.User.logoutUser" href="#wearther.User.logoutUser">logoutUser</a></code></li>
+<li><code><a title="wearther.User.updatePreferences" href="#wearther.User.updatePreferences">updatePreferences</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.1</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

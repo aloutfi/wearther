@@ -1,0 +1,514 @@
+swagger: '2.0'
+info:
+  description: This is the Wearther API.
+  version: 1.0.0
+  title: Wearther API
+
+tags:
+- name: user
+  description: Operations about user
+- name: closet
+  description: Access to closet inventory
+- name: article
+  description: Everything about your clothes
+
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create a wearther user
+      description: This can only be done by the logged in user.
+      operationId: createAccount
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: body
+        description: Created user object
+        required: true
+      responses:
+        default:
+          description: successful operation
+  /user/updatePreferences:
+    put:
+      tags:
+      - user
+      summary: Update user temperature settings
+      operationId: updatePreferences
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: body
+        description: Update user temperature settings
+        required: true
+      responses:
+        default:
+          description: successful operation
+  /user/login:
+    get:
+      tags:
+      - user
+      summary: Logs user into the system
+      operationId: loginUser
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: username
+        in: query
+        description: The user name for login
+        required: true
+        type: string
+      - name: password
+        in: query
+        description: The password for login in clear text
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid username/password supplied
+  /user/logout:
+    get:
+      tags:
+      - user
+      summary: Logs out current logged in user session
+      operationId: logoutUser
+      produces:
+      - application/json
+      - application/xml
+      parameters: []
+      responses:
+        default:
+          description: successful operation
+  /user/PlanTrip/{destination}/{start_date}/{end_date}:
+    get:
+      tags:
+      - user
+      summary: Query the Wearther Server for an outfit reccomendation based on destination between start date and end date
+      operationId: PlanTrip
+      produces:
+      - application/json
+      - application/xml
+      parameters: 
+      - name: destination
+        in: path
+        description: Coordinate pair or zip code expressing user's location
+        required: true
+        type: string
+      - name: start_date
+        in: path
+        description: start date of the trip
+        required: true
+        type: string
+      - name: end_date
+        in: path
+        description: end date of the trip
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successful operation
+        500:
+          description: weather service is unreachable
+  /user/getOutfitReccomendation/{location}:
+    get:
+      tags:
+      - user
+      summary: Query the Wearther Server for an outfit reccomendation
+      operationId: getOutfitReccomendation
+      produces:
+      - application/json
+      - application/xml
+      parameters: 
+      - name: location
+        in: path
+        description: Coordinate pair or zip code expressing user's location
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successful operation
+        500:
+          description: weather service is unreachable
+  /user/{username}:
+    get:
+      tags:
+      - user
+      summary: Get user by user name
+      operationId: getUserByName
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: username
+        in: path
+        description: The name that needs to be fetched. Use user1 for testing. 
+        required: true
+        type: string
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+    put:
+      tags:
+      - user
+      summary: Update user data
+      description: Update generic user data.
+      operationId: updateUser
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: username
+        in: path
+        description: name that need to be updated
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: Updated user object
+        required: true
+      responses:
+        400:
+          description: Invalid user supplied
+        404:
+          description: User not found
+    delete:
+      tags:
+      - user
+      summary: Delete user
+      description: This can only be done by the logged in user.
+      operationId: deleteUser
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: username
+        in: path
+        description: The name that needs to be deleted
+        required: true
+        type: string
+      responses:
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+    /closet/inventory:
+      get:
+        tags:
+        - closet
+        summary: Returns clothing availability statistics
+        description: Returns a map of status codes to quantities
+        operationId: getInventory
+        produces:
+        - application/json
+        parameters: []
+        responses:
+          200:
+            description: successful operation
+        security:
+        - api_key: []
+  /closet/add:
+    post:
+      tags:
+      - closet
+      summary: Add an article of clothing to closet
+      operationId: addClothingArticleToCloset
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: body
+        description: Adds body as a new clothing article to user's closet.
+        required: true
+      responses:
+        200:
+          description: successful operation
+
+  /closet/article/{articleId}:
+    get:
+      tags:
+      - closet
+      summary: Find article by ID
+      description: For valid response try integer IDs with value >= 1.
+      operationId: getArticlefromClosetById
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of clothing article
+        required: true
+        type: integer
+        maximum: 10.0
+        minimum: 1.0
+        format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Order not found
+    delete:
+      tags:
+      - closet
+      summary: Delete clothing article by ID
+      description: For valid response try integer IDs with positive integer value.\
+        \ Negative or non-integer values will generate API errors
+      operationId: deleteArticleFromCloset
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of the article that needs to be deleted
+        required: true
+        type: integer
+        minimum: 1.0
+        format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Order not found
+  /article:
+    post:
+      tags:
+      - article
+      summary: Add a new clothing article to the closet
+      operationId: addArticle
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: body
+        description: Clothing article that needs to be added to the closet
+        required: true
+      responses:
+        405:
+          description: Invalid input
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+  /article/findByStatus:
+    get:
+      tags:
+      - article
+      summary: Finds article by status
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findArticleByStatus
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: status
+        in: query
+        description: Status values that need to be considered for filter
+        required: true
+        type: array
+        items:
+          type: string
+          enum:
+          - available
+          - pending
+          - sold
+          default: available
+        collectionFormat: multi
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid status value
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+  /article/findByType:
+    get:
+      tags:
+      - article
+      summary: Finds clothing articles by type
+      description: Muliple types can be provided with comma separated strings. Use type1, type2, type3 for testing.
+      operationId: findArticlesByTags
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: tags
+        in: query
+        description: Tags to filter by
+        required: true
+        type: array
+        items:
+          type: string
+        collectionFormat: multi
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid tag value
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+  /article/{articleId}:
+    get:
+      tags:
+      - article
+      summary: Find article by ID
+      description: Returns a single clothing article
+      operationId: getArticleById
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of article to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+        404:
+          description: article not found
+      security:
+      - api_key: []
+    put:
+      tags:
+      - article
+      summary: Updates a clothing article's status or basic information in the closet with form data
+      operationId: updateArticleWithForm
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of article that needs to be updated
+        required: true
+        type: integer
+        format: int64
+      - name: name
+        in: formData
+        description: Updated name of the article
+        required: false
+        type: string
+      - name: status
+        in: formData
+        description: Updated status of the article
+        required: false
+        type: string
+      responses:
+        405:
+          description: Invalid input
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+    delete:
+      tags:
+      - article
+      summary: Deletes specified article of clothing
+      operationId: deleteArticle
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: api_key
+        in: header
+        required: false
+        type: string
+      - name: articleId
+        in: path
+        description: article id to delete
+        required: true
+        type: integer
+        format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+        404:
+          description: Article not found
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+  /article/{articleId}/uploadImage:
+    post:
+      tags:
+      - article
+      summary: uploads an image
+      operationId: uploadFile
+      consumes:
+      - multipart/form-data
+      produces:
+      - application/json
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of article to update
+        required: true
+        type: integer
+        format: int64
+      - name: additionalMetadata
+        in: formData
+        description: Additional data to pass to server
+        required: false
+        type: string
+      - name: file
+        in: formData
+        description: file to upload
+        required: false
+        type: file
+      responses:
+        200:
+          description: successful operation
+      security:
+      - wearther_auth:
+        - write:article
+        - read:article
+
+securityDefinitions:
+  wearther_auth:
+    type: oauth2
+    authorizationUrl: http://wearther.swagger.io/oauth/dialog
+    flow: implicit
+    scopes:
+      write:article: modify clothing articles in your account
+      read:article: read your clothing articles
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+
+
+basePath: /CPD41/Wearther-3/1.0.0
+schemes:
+ - https
+ - http
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
