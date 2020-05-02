@@ -311,7 +311,7 @@
       },
       "delete" : {
         "tags" : [ "closet" ],
-        "summary" : "Delete clothing article by ID",
+        "summary" : "Delete clothing article by ID from closet.",
         "description" : "For valid response try integer IDs with positive integer value.\\ \\ Negative or non-integer values will generate API errors",
         "operationId" : "deleteArticleFromCloset",
         "produces" : [ "application/json", "application/xml" ],
@@ -346,6 +346,30 @@
           "name" : "ClothingArticle",
           "description" : "Clothing article that needs to be added to the closet",
           "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ClothingArticle"
+          }
+        } ],
+        "responses" : {
+          "405" : {
+            "description" : "Invalid input"
+          }
+        },
+        "security" : [ {
+          "wearther_auth" : [ "write:article", "read:article" ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "article" ],
+        "summary" : "Updates a clothing article's status or basic information in the closet with form data",
+        "operationId" : "updateArticleWithForm",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "ClothingArticle",
+          "description" : "Clothing article that needs to be added to the closet",
+          "required" : false,
           "schema" : {
             "$ref" : "#/definitions/ClothingArticle"
           }
@@ -452,41 +476,6 @@
         },
         "security" : [ {
           "api_key" : [ ]
-        } ]
-      },
-      "put" : {
-        "tags" : [ "article" ],
-        "summary" : "Updates a clothing article's status or basic information in the closet with form data",
-        "operationId" : "updateArticleWithForm",
-        "consumes" : [ "application/x-www-form-urlencoded" ],
-        "produces" : [ "application/json", "application/xml" ],
-        "parameters" : [ {
-          "name" : "articleId",
-          "in" : "path",
-          "description" : "ID of article that needs to be updated",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "name",
-          "in" : "formData",
-          "description" : "Updated name of the article",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "status",
-          "in" : "formData",
-          "description" : "Updated status of the article",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "405" : {
-            "description" : "Invalid input"
-          }
-        },
-        "security" : [ {
-          "wearther_auth" : [ "write:article", "read:article" ]
         } ]
       },
       "delete" : {
