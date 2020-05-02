@@ -551,7 +551,7 @@
     "User" : {
       "type" : "object",
       "properties" : {
-        "id" : {
+        "userId" : {
           "type" : "string",
           "format" : "int64"
         },
@@ -567,16 +567,14 @@
         "email" : {
           "type" : "string"
         },
+        "height" : {
+          "type" : "string"
+        },
+        "weight" : {
+          "type" : "string"
+        },
         "password" : {
           "type" : "string"
-        },
-        "phone" : {
-          "type" : "string"
-        },
-        "userStatus" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "User Status"
         }
       }
     },
