@@ -61,6 +61,19 @@
         }
       }
     },
+    "/user/getNotifications" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "retrieve wearther notifications from server",
+        "operationId" : "getNotifications",
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
     "/user/login" : {
       "get" : {
         "tags" : [ "user" ],
