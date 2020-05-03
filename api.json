@@ -140,7 +140,7 @@
           "description" : "Update user temperature settings",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Feedback"
+            "$ref" : "#/definitions/RecommendationFeedback"
           }
         } ],
         "responses" : {
@@ -492,12 +492,15 @@
         }
       }
     },
-    "Feedback" : {
+    "RecommendationFeedback" : {
       "type" : "object",
       "properties" : {
-        "id" : {
+        "feedbackId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "feedbackRating" : {
+          "type" : "object"
         }
       }
     },
