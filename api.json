@@ -107,11 +107,32 @@
         }
       }
     },
-    "/user/updatePreferences" : {
+    "/user/getPromptFeedbackRequest/{reccomendationId}" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "Get feedback request for associated reccomendation.",
+        "operationId" : "getFeedbackRequest",
+        "produces" : [ "application/json", "application/xml" ],
+        "parameters" : [ {
+          "name" : "reccomendationId",
+          "in" : "path",
+          "description" : "ID of reccomendation to prompt feedback of.",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/user/submitFeedback" : {
       "put" : {
         "tags" : [ "user" ],
         "summary" : "Update user temperature settings",
-        "operationId" : "updatePreferences",
+        "operationId" : "submitFeedback",
         "produces" : [ "application/json", "application/xml" ],
         "parameters" : [ {
           "in" : "body",
@@ -185,7 +206,7 @@
         }
       }
     },
-    "/user/PlanTrip/{destination}/{start_date}/{end_date}" : {
+    "/user/planTrip/{destination}/{start_date}/{end_date}" : {
       "get" : {
         "tags" : [ "user" ],
         "summary" : "Query the Wearther Server for an outfit reccomendation based on destination between start date and end date",
