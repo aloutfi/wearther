@@ -12,7 +12,7 @@
     "name" : "closet",
     "description" : "Access to closet inventory"
   }, {
-    "name" : "article",
+    "name" : "clothingArticle",
     "description" : "Everything about your clothes"
   } ],
   "paths" : {
@@ -373,9 +373,9 @@
         }
       }
     },
-    "/article" : {
+    "/clothingArticle" : {
       "put" : {
-        "tags" : [ "article" ],
+        "tags" : [ "clothingArticle" ],
         "summary" : "Updates a clothing article's status or basic information in the closet with form data",
         "operationId" : "modifyClothingArticle",
         "consumes" : [ "application/x-www-form-urlencoded" ],
@@ -399,15 +399,15 @@
         } ]
       }
     },
-    "/article/{articleId}" : {
+    "/clothingArticle/{clothingArticleId}" : {
       "get" : {
-        "tags" : [ "article" ],
+        "tags" : [ "clothingArticle" ],
         "summary" : "Find article by ID",
         "description" : "Returns a single clothing article",
         "operationId" : "getClothingArticleById",
         "produces" : [ "application/json", "application/xml" ],
         "parameters" : [ {
-          "name" : "articleId",
+          "name" : "clothingArticleId",
           "in" : "path",
           "description" : "ID of article to return",
           "required" : true,
@@ -430,7 +430,7 @@
         } ]
       },
       "delete" : {
-        "tags" : [ "article" ],
+        "tags" : [ "clothingArticle" ],
         "summary" : "Deletes specified article of clothing",
         "operationId" : "deleteClothingArticle",
         "produces" : [ "application/json", "application/xml" ],
@@ -440,7 +440,7 @@
           "required" : false,
           "type" : "string"
         }, {
-          "name" : "articleId",
+          "name" : "clothingArticleId",
           "in" : "path",
           "description" : "article id to delete",
           "required" : true,
@@ -504,7 +504,7 @@
     "ClothingArticle" : {
       "type" : "object",
       "properties" : {
-        "articleId" : {
+        "clothingArticleId" : {
           "type" : "integer"
         },
         "closetId" : {
